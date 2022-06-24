@@ -1,12 +1,19 @@
-class Person
+class Nameable
+  def correct_name
+    raise NotImplementedError
+  end
+end
+
+class Person < Nameable
   attr_reader :id
   attr_accessor :name, :age
 
   def initialize(age, name = 'Unknown', parent_permission: true)
-    @id = id
+    @id = Random.rand(1..100)
     @name = name
     @age = age
     @parent_permission = parent_permission
+    super()
   end
 
   private
@@ -19,6 +26,10 @@ class Person
 
   def can_use_services?
     is_of_age? || @parent_permission
+  end
+
+  def correct_name
+    @name
   end
 end
 
