@@ -14,7 +14,7 @@ git clone https://github.com/YannickZahinda/OOP_school_library
 
 -run `bundle install`
 
--run `ruby app.rb`
+-run `ruby main.rb`
 
 # Authors
 
